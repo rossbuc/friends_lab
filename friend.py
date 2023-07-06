@@ -111,12 +111,24 @@ def add_friend(person, new_friend):
             pers["friends"].append(new_friend)
 
 print(add_friend(person2, "Scrappy-Doo"))
+for pers in people:
+        if pers == person2:
+            print(pers["friends"])
 
 # 5. Define a function called remove_friend(person, old_friend) that removes a friend from the person's list of friends
 # INPUT: person2, "Fred"
 # OUTPUT: None
 # Test your function by calling it and then printing our person2's list of friends
 
+def remove_friend(person, old_friend):
+    for pers in people:
+        if pers == person:
+            pers["friends"].remove(old_friend)
+
+print(remove_friend(person2, "Fred"))
+for pers in people:
+        if pers == person2:
+            print(pers["friends"])
 
 # 6. Define a function called total_money(people) that returns the total of everyone's money
 # INPUT: people
