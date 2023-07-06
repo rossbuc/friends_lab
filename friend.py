@@ -90,7 +90,16 @@ print(get_favourite_tv_show(person2))
 #
 # INPUT: person3, "spinach"
 # OUTPUT: False
+def likes_to_eat(person, food):
+    for pers in people:
+        if pers == person:
+            for snack in pers["favourites"]["snacks"]:
+                if snack == food:
+                    return True
+            return False
 
+print(likes_to_eat(person2, "bread"))
+print(likes_to_eat(person3, "spinach"))
 
 # 4. Define a function called add_friend(person, new_friend) that appends a new friend to the person's list of friends
 # INPUT: person2, "Scrappy-Doo"
