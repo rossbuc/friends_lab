@@ -134,12 +134,30 @@ for pers in people:
 # INPUT: people
 # OUTPUT: 143
 
+def total_money(people):
+    total = 0
+    for pers in people:
+        total += pers["monies"]
+    return total 
 
+print(total_money(people))
 # 7. Define a function called lend_money(lender, borrower, amount) that removes a given amount from the lender and adds it to the borrower
 # INPUT: person2, person1, 2
 # OUTPUT: None
 # Test your function by calling it and then printing out person1's and person2's monies
+def lend_money(lender, borrower, amount):
+    for pers in people:
+        if pers == lender:
+            pers["monies"] -= amount
+        elif pers == borrower:
+            pers["monies"] += amount
 
+lend_money(person2, person1, 2)
+for pers in people:
+        if pers == person1:
+            print(pers["monies"])
+        elif pers == person2:
+            print(pers["monies"])
 
 # 8. Define a function called all_favourite_foods(people) that returns a list of everyone's favourite food.
 # INPUT: people
