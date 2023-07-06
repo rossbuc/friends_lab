@@ -77,7 +77,12 @@ print(get_name(person5))
 # 2. Define a function called get_favourite_tv_show(person) that returns the given person's favourite TV show
 # INPUT: person2
 # OUTPUT: "Baywatch"
+def get_favourite_tv_show(person):
+    for pers in people:
+        if pers == person:
+            return pers["favourites"]["tv_show"]
 
+print(get_favourite_tv_show(person2))
 
 # 3. Define a function called likes_to_eat(person, food) that returns True or False
 # INPUT: person2, "bread"
