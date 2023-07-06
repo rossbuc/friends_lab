@@ -176,7 +176,14 @@ print(all_favourite_foods(people))
 # INPUT: people
 # OUTPUT: [{'name': 'Daphne', 'age': 20, 'monies': 100, 'friends': [], 'favourites': {'tv_show': 'X-Files', 'snacks': ['spinach']}}]
 
+def find_no_friends(people):
+    loners = []
+    for pers in people:
+        if len(pers["friends"]) == 0:
+            loners.append(pers)
+    return loners
 
+print(find_no_friends(people))
 # 10. Define a function called unique_favourite_tv_shows(people) that returns a list of all the tv_shows (without duplicates).
 # INPUT: people
 # OUTPUT: ['Friends', 'Baywatch', 'Pokemon', 'X-Files']
