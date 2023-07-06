@@ -188,5 +188,19 @@ print(find_no_friends(people))
 # INPUT: people
 # OUTPUT: ['Friends', 'Baywatch', 'Pokemon', 'X-Files']
 
+def unique_favourite_tv_shows(people):
+    no_duplicate_shows = []
+    for pers in people: 
+        if pers["favourites"]["tv_show"] not in no_duplicate_shows:
+            no_duplicate_shows.append(pers["favourites"]["tv_show"])
+    return no_duplicate_shows
+
+print(unique_favourite_tv_shows(people))
 
 # BONUS: Try to refactor the previous function to use Python's built-in set() function.
+def unique_favourite_tv_shows_set(people):
+    no_duplicate_shows = set()
+    for pers in people:
+        no_duplicate_shows.add(pers["favourites"]["tv_show"])
+    return no_duplicate_shows
+print(unique_favourite_tv_shows_set(people))
