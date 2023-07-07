@@ -132,11 +132,8 @@ print(total_money(people))
 # OUTPUT: None
 # Test your function by calling it and then printing out person1's and person2's monies
 def lend_money(lender, borrower, amount):
-    for pers in people:
-        if pers == lender:
-            pers["monies"] -= amount
-        elif pers == borrower:
-            pers["monies"] += amount
+    lender["monies"] -= amount
+    borrower["monies"] += amount
 
 lend_money(person2, person1, 2)
 print(person1["monies"])
