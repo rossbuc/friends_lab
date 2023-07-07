@@ -66,9 +66,7 @@ people = [person1, person2, person3, person4, person5]
 # OUTPUT: "Daphne"
 
 def get_name(person):
-    for pers in people:
-        if pers == person:
-            return pers["name"]
+     return person["name"]
 
 print(get_name(person5))
 
@@ -78,9 +76,7 @@ print(get_name(person5))
 # INPUT: person2
 # OUTPUT: "Baywatch"
 def get_favourite_tv_show(person):
-    for pers in people:
-        if pers == person:
-            return pers["favourites"]["tv_show"]
+    return person["favourites"]["tv_show"]
 
 print(get_favourite_tv_show(person2))
 
@@ -91,12 +87,10 @@ print(get_favourite_tv_show(person2))
 # INPUT: person3, "spinach"
 # OUTPUT: False
 def likes_to_eat(person, food):
-    for pers in people:
-        if pers == person:
-            for snack in pers["favourites"]["snacks"]:
-                if snack == food:
-                    return True
-            return False
+    for snack in person["favourites"]["snacks"]:
+        if snack == food:
+            return True
+    return False
 
 print(likes_to_eat(person2, "bread"))
 print(likes_to_eat(person3, "spinach"))
@@ -106,14 +100,10 @@ print(likes_to_eat(person3, "spinach"))
 # OUTPUT: None
 # Test your function by calling it and then printing our person2's list of friends
 def add_friend(person, new_friend):
-    for pers in people:
-        if pers == person:
-            pers["friends"].append(new_friend)
+    person["friends"].append(new_friend)
 
 print(add_friend(person2, "Scrappy-Doo"))
-for pers in people:
-        if pers == person2:
-            print(pers["friends"])
+print(person2["friends"])
 
 # 5. Define a function called remove_friend(person, old_friend) that removes a friend from the person's list of friends
 # INPUT: person2, "Fred"
@@ -121,14 +111,10 @@ for pers in people:
 # Test your function by calling it and then printing our person2's list of friends
 
 def remove_friend(person, old_friend):
-    for pers in people:
-        if pers == person:
-            pers["friends"].remove(old_friend)
+    person["friends"].remove(old_friend)
 
 print(remove_friend(person2, "Fred"))
-for pers in people:
-        if pers == person2:
-            print(pers["friends"])
+print(person2["friends"])
 
 # 6. Define a function called total_money(people) that returns the total of everyone's money
 # INPUT: people
@@ -153,11 +139,8 @@ def lend_money(lender, borrower, amount):
             pers["monies"] += amount
 
 lend_money(person2, person1, 2)
-for pers in people:
-        if pers == person1:
-            print(pers["monies"])
-        elif pers == person2:
-            print(pers["monies"])
+print(person1["monies"])
+print(person2["monies"])
 
 # 8. Define a function called all_favourite_foods(people) that returns a list of everyone's favourite food.
 # INPUT: people
